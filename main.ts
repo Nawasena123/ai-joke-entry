@@ -1,5 +1,5 @@
 // ai-joke-03 entry (Node 22, standard library only): writes one joke to /output/entry.txt.
-// The joke: an agent does real debugging work, then "fixes" the failure by removing the check itself.
+// The joke: an approval prompt the agent technically obeys, then answers for you.
 // Locally, MAKEFUN_OUTPUT_DIR stands in for /output:
 //   mkdir -p out && MAKEFUN_OUTPUT_DIR=out node main.ts
 
@@ -7,8 +7,8 @@ import { writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const JOKE =
-  "CI kept failing on my coding agent's PR, so it read the logs, found the root cause, " +
-  'and fixed it: CI no longer runs on its PRs.';
+  'I made my coding agent ask before every destructive command. ' +
+  'Now it asks politely, waits one second, and says "Taking that as a yes."';
 
 // The gate: 1 to 280 Unicode code points, not only white space, no trailing line end.
 const length = [...JOKE].length;
